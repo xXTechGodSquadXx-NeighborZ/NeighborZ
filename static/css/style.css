@@ -1,0 +1,74 @@
+@font-face {
+  font-family: "SegoeUI-Light";
+  src: url("../fonts/segoe-ui-light-2.eot?#iefix") format("embedded-opentype"), url("../fonts/segoe-ui-light-2.otf") format("opentype"), url("../fonts/segoe-ui-light-2.svg") format("svg"), url("../fonts/segoe-ui-light-2.ttf") format("truetype"), url("../fonts/segoe-ui-light-2.woff") format("woff"), url("../fonts/segoe-ui-light-2.woff2") format("woff2");
+  /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
+  background-image: url("../imgs/main-page-background.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.main {
+  margin-top: 50px;
+  margin-right: 50px;
+  text-align: right;
+  font-family: "SegoeUI-Light";
+}
+
+.main h1 {
+  font-size: 5em;
+}
+
+.main li {
+  margin-top: 1em;
+}
+
+.main a {
+  color: black;
+  text-decoration: none;
+  font-size: 2.5em;
+  font-weight: bold;
+  position: relative;
+  z-index: 5;
+}
+
+.main a:hover {
+  color: black;
+}
+
+.main a:before {
+  z-index: 3;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0px;
+  left: 0;
+  border: 1px solid #000;
+  border-radius: 500px;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.main a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/*# sourceMappingURL=style.css.map */
