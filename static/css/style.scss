@@ -1,0 +1,19 @@
+@font-face {
+	font-family: "SegoeUI-Light";
+	// src: url("../fonts/segoe-ui-light-2.eot"); /* IE9 Compat Modes */
+	src: url("../fonts/segoe-ui-light-2.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */ url("../fonts/segoe-ui-light-2.otf") format("opentype"), /* Open Type Font */ url("../fonts/segoe-ui-light-2.svg") format("svg"), /* Legacy iOS */ url("../fonts/segoe-ui-light-2.ttf") format("truetype"), /* Safari, Android, iOS */ url("../fonts/segoe-ui-light-2.woff") format("woff"), /* Modern Browsers */ url("../fonts/segoe-ui-light-2.woff2") format("woff2"); /* Modern Browsers */
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "SegoeUI-Light";
+	color: black;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f6f6f6;
+}
