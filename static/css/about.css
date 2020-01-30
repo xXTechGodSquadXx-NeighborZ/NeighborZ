@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  min-height: 100vh;
   max-width: 100vw;
   display: -ms-grid;
   display: grid;
@@ -154,7 +154,7 @@ footer {
   margin-top: 10px;
 }
 
-@media screen and (min-height: 800px) and (min-width: 1350px) {
+@media screen and (min-height: 650px) and (min-width: 1360px) {
   .container {
     width: 99vw;
     height: 100%;
@@ -171,7 +171,7 @@ footer {
   }
 }
 
-@media screen and (max-height: 799px) and (min-width: 1350px) {
+@media screen and (max-height: 649px) and (min-width: 1360px) {
   .container {
     width: 97vw;
     height: 100%;
@@ -188,7 +188,7 @@ footer {
   }
 }
 
-@media screen and (min-height: 800px) and (max-width: 1349px) and (min-width: 850px) {
+@media screen and (min-height: 650px) and (max-width: 1359px) and (min-width: 850px) {
   .container {
     min-width: 99vw;
     max-width: 99vw;
@@ -207,7 +207,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 849px), screen and (max-height: 799px) {
+@media screen and (max-width: 849px), screen and (max-height: 649px) {
   .top {
     margin: 0 auto;
     min-width: 310px;
