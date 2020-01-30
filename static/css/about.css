@@ -210,7 +210,7 @@ footer {
 @media screen and (max-width: 849px), screen and (max-height: 799px) {
   .top {
     margin: 0 auto;
-    min-width: 400px;
+    min-width: 310px;
     max-width: 80vw;
   }
   .top .avatar {
@@ -219,7 +219,7 @@ footer {
   .bio {
     min-height: 33vh;
     margin: 0 auto;
-    min-width: calc(400px - 14px);
+    min-width: calc(310px - 14px);
     max-width: calc(80vw - 14px);
   }
   body {
