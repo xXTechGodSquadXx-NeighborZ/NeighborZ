@@ -148,7 +148,7 @@ body {
 
 footer {
   margin-top: 10px;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid black;
 }
 
 @media screen and (min-height: 650px) and (min-width: 1360px) {
