@@ -149,14 +149,17 @@ footer {
 			"chase-bio . . . caleb-bio";
 	}
 }
-@media screen and (max-height: 649px) and (min-width: 1360px) {
+@media screen and (min-height: 650px) and (min-width: 1360px) {
+	.main {
+		grid-template-rows: 1fr 2fr;
+	}
 	.container {
 		width: 97vw;
 		height: 100%;
 		margin: 0 auto;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		grid-template-rows: 1.3fr 2fr;
+		grid-template-rows: 1fr 1fr;
 		grid-column-gap: 0px;
 		grid-row-gap: 0px;
 		grid-template-areas:

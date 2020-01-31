@@ -171,7 +171,11 @@ footer {
   }
 }
 
-@media screen and (max-height: 649px) and (min-width: 1360px) {
+@media screen and (min-height: 650px) and (min-width: 1360px) {
+  .main {
+    -ms-grid-rows: 1fr 2fr;
+        grid-template-rows: 1fr 2fr;
+  }
   .container {
     width: 97vw;
     height: 100%;
@@ -180,8 +184,8 @@ footer {
     display: grid;
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
-    -ms-grid-rows: 1.3fr 2fr;
-        grid-template-rows: 1.3fr 2fr;
+    -ms-grid-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
         grid-template-areas: "chase-top jack-top emmanuel-top samuel-top caleb-top" "chase-bio jack-bio emmanuel-bio samuel-bio caleb-bio";
