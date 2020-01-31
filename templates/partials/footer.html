@@ -3,7 +3,9 @@
 		background: black;
 		color: white;
 		display: table;
-		height: 100px;
+		height: 95px;
+		width: 100%;
+		max-width: 100vw;
 	}
 
 	footer .table-container {
@@ -33,6 +35,28 @@
 	footer .table-container ul li a i {
 		color: #fff;
 		padding-right: 5px;
+	}
+
+	@media screen and (max-width: 849px), screen and (max-height: 649px) {
+		footer {
+			display: block;
+			height: 95px;
+			padding: 20px 0;
+			width: 100%;
+			max-width: 100vw;
+			text-align: center;
+		}
+		footer .table-container {
+			display: contents;
+			vertical-align: initial;
+		}
+		footer .table-container ul {
+			display: contents;
+		}
+		footer .table-container ul li {
+			display: block;
+			margin-top: 20px;
+		}
 	}
 </style>
 <footer>
