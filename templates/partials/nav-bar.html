@@ -1,5 +1,11 @@
 <style>
-	nav {
+	html,
+	body {
+		overflow-x: hidden;
+		position: relative;
+		overflow-y: auto;
+	}
+	.normal {
 		height: 50px;
 		width: 90%;
 		background: #e6e6e6;
@@ -12,7 +18,7 @@
 		border-top: none;
 	}
 
-	nav ul {
+	.normal ul {
 		list-style: none;
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -21,11 +27,11 @@
 		justify-content: space-around;
 	}
 
-	nav ul li {
+	.normal ul li {
 		display: inline;
 	}
 
-	nav ul li a {
+	.normal ul li a {
 		color: black;
 		text-decoration: none;
 		font-size: 20pt;
@@ -33,11 +39,11 @@
 		position: relative;
 	}
 
-	nav ul li a:hover {
+	.normal ul li a:hover {
 		color: black;
 	}
 
-	nav ul li a:before {
+	.normal ul li a:before {
 		z-index: 3;
 		content: "";
 		position: absolute;
@@ -55,17 +61,157 @@
 		transition: all 0.3s ease-in-out 0s;
 	}
 
-	nav ul li a:hover:before {
+	.normal ul li a:hover:before {
 		visibility: visible;
 		-webkit-transform: scaleX(1);
 		transform: scaleX(1);
 	}
+	.mobile {
+		display: none;
+	}
+
+	@media screen and (max-width: 767px) {
+		.normal {
+			display: none;
+		}
+		.mobile {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 100vw;
+			height: 50px;
+			background: #e6e6e6;
+			border-bottom: solid gray 3px;
+			font-weight: bolder;
+		}
+
+		.mobile .nav-active {
+			transform: translateX(0%) !important;
+		}
+		.mobile .logo {
+			font-family: "SegoeUI-Light", sans-serif;
+			color: black;
+			font-size: 26px;
+		}
+		.mobile .logo a {
+			color: black;
+			text-decoration: none;
+		}
+		.mobile .burger-div {
+			display: block;
+		}
+		.mobile .nav-links {
+			font-family: "Montserrat", sans-serif;
+			display: flex;
+			justify-content: space-around;
+			font-size: 24px;
+			width: calc(50% - 3px);
+			position: absolute;
+			right: 0px;
+			height: calc(100vh - 50px - 6px - 100px);
+			max-height: calc(100vh - 50px - 6px - 100px);
+			min-height: calc(100vh - 50px - 6px - 100px);
+			padding-bottom: none;
+			top: 53px;
+			background-color: #e6e6e6;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			transform: translateX(100%);
+			transition: transform 0.5s ease-in;
+			border-bottom: solid gray 3px;
+			border-left: solid gray 3px;
+			border-bottom-left-radius: 50px;
+		}
+		.mobile .nav-links li {
+			list-style: none;
+			opacity: 0;
+			text-align: center;
+		}
+		.mobile .nav-links li a {
+			color: black;
+			text-decoration: none;
+			padding: 1em;
+		}
+		.mobile .burger {
+			cursor: pointer;
+			padding-bottom: 6px !important;
+		}
+		.mobile #hamburger-layer {
+			background-color: rgb(95, 95, 95);
+		}
+	}
+
+	@keyframes navLinkFade {
+		0% {
+			opacity: 0;
+			transform: translateX(50px);
+		}
+		100% {
+			opacity: 1;
+			transform: translateX(0px);
+		}
+	}
 </style>
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../static/css/hamburger.min.css" />
 <nav>
-	<ul>
-		<li><a href="../">Home</a></li>
-		<li><a href="../forum">Go to Forum</a></li>
-		<li><a href="../about">About Us</a></li>
-		<li><a href="../contact-us">Contact Us</a></li>
-	</ul>
+	<div class="normal">
+		<ul>
+			<li><a href="../          ">Home</a></li>
+			<li><a href="../forum     ">Go to Forum</a></li>
+			<li><a href="../about     ">About Us</a></li>
+			<li><a href="../contact-us">Contact Us</a></li>
+		</ul>
+	</div>
+	<div class="mobile">
+		<div class="logo">
+			<a href="..">
+				NeighborZ
+			</a>
+		</div>
+
+		<ul class="nav-links">
+			<li><a href="../          ">Home</a></li>
+			<li><a href="../forum     ">Go to Forum</a></li>
+			<li><a href="../about     ">About Us</a></li>
+			<li><a href="../contact-us">Contact Us</a></li>
+		</ul>
+		<div class="burger-div">
+			<a class="hamburger hamburger--emphatic burger">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</a>
+		</div>
+	</div>
 </nav>
+<script>
+	(() => {
+		const body = document.getElementsByTagName("BODY")[0];
+		const burger = body.querySelector(".burger");
+		const nav = body.querySelector(".nav-links");
+		const navLinks = body.querySelectorAll(".nav-links li");
+
+		burger.addEventListener("click", () => {
+			// Toggle Nav
+			nav.classList.toggle("nav-active");
+			burger.classList.toggle("is-active");
+			// body.classList.toggle("scroll-lock");
+			// Animate Nav Links
+			navLinks.forEach((link, index) => {
+				if (!nav.classList.contains("nav-active")) {
+					setTimeout(() => {
+						link.style.animation = "";
+					}, 500);
+				} else {
+					link.style.animation = `navLinkFade 0.5s ease forwards ${index / 6 + 0.5}s`;
+					setTimeout(() => {
+						link.style.animation = `navLinkFade 0.5s ease forwards ${index / 6 + 0.5}s`; // Redoes the fading in animation in the case of someone spamming the burger
+					}, 500);
+				}
+			});
+		});
+	})();
+</script>
