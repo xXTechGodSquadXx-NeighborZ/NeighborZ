@@ -19,11 +19,13 @@
 		<div class="flash">{{ message }}</div>
 		{% endfor %} {% for message in form.subject.errors %}
 		<div class="flash">{{ message }}</div>
+		{% endfor %} {% for message in form.reason.errors %}
+		<div class="flash">{{ message }}</div>
 		{% endfor %} {% for message in form.message.errors %}
 		<div class="flash">{{ message }}</div>
 		{% endfor %}
 		<form action="{{ url_for('contact_us') }}" method="post">
-			{{ form.hidden_tag() }} {{ form.name.label }} {{ form.name }} {{ form.email.label }} {{ form.email }} {{ form.subject.label }} {{ form.subject }} {{ form.message.label }} {{ form.message }} {{ form.submit }}
+			{{ form.hidden_tag() }} {{ form.name.label }} {{ form.name }} {{ form.email.label }} {{ form.email }} {{ form.subject.label }} {{ form.subject }} {{ form.reason.label }} {{ form.reason }} {{ form.message.label }} {{ form.message }} {{ form.submit }}
 		</form>
 		{% endblock %}
 		<!--{%- include '/partials/nav-bar.html' -%} -->
