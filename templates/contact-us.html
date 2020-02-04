@@ -1,15 +1,3 @@
-<!-- Emails:
-	Samuel Gunter: samuelgunter3@gmail.com
-	Jack Nguyen: jacknguyen2238@gmail.com
-	Emmanuel Ahonle: emmanuelahonle101@gmail.com
-
--->
-<!-- Phone numbers:
-    Samuel Gunter: Too poor to have a phone
-    Jack Nguyen:    512 412 5215
-    Emmanuel Ahonle: (512)-443-4848
--->
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -18,19 +6,38 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="../static/css/style.css" />
 		<link rel="stylesheet" href="../static/css/contact.css" />
+		<!--{%- include '/partials/font-awesome.html' -%}-->
 		<title>Contacts | NeighborZ</title>
 	</head>
 	<body>
-		<h1>Need assistance?</h1>
+		{% block content %}
+
+		<h2>Contact</h2>
+		{% for message in form.name.errors %}
+		<div class="flash">{{ message }}</div>
+		{% endfor %} {% for message in form.email.errors %}
+		<div class="flash">{{ message }}</div>
+		{% endfor %} {% for message in form.subject.errors %}
+		<div class="flash">{{ message }}</div>
+		{% endfor %} {% for message in form.message.errors %}
+		<div class="flash">{{ message }}</div>
+		{% endfor %}
+		<form action="{{ url_for('contact_us') }}" method="post">
+			{{ form.hidden_tag() }} {{ form.name.label }} {{ form.name }} {{ form.email.label }} {{ form.email }} {{ form.subject.label }} {{ form.subject }} {{ form.message.label }} {{ form.message }} {{ form.submit }}
+		</form>
+		{% endblock %}
+		<!--{%- include '/partials/nav-bar.html' -%} -->
+
+		<!-- <h1>Need assistance?</h1>
 		<h2>Username</h2>
 		<input type="text" placeholder="Enter Username" name="uname" required />
 		<h2>email</h2>
 		<input type="text" placeholder="Enter Email" name="ail" required />
 		<h2>Problem?</h2>
-		<input type="text" palceholder="Enter Problem" name="contactProb" required />
+		<input type="text" placeholder="Enter Problem" name="contactProb" required />
 		<h2>Comments?</h2>
 		<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Place your in here..."></textarea>
 
-		<button type="submit">Submit</button>
+		<button type="submit">Submit</button> -->
 	</body>
 </html>
