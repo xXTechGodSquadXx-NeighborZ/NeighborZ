@@ -1,0 +1,116 @@
+$min-wid: 320px - 12px;
+$wid: 800px - 12px;
+$max-wid: calc(100vw - 50px - 12px);
+
+body {
+	height: 100vh;
+	.container {
+		min-height: calc(100vh - 95px - 59px);
+	}
+}
+h1 {
+	text-align: center;
+	font-size: 2.5em;
+	font-family: "Montserrat", "SegeoUI-Light", sans-serif;
+}
+h6 {
+	text-align: center;
+}
+
+form {
+	label {
+		font-size: 1.5em;
+		font-weight: bold;
+		display: block;
+		padding: 10px 0;
+		width: 100%;
+		margin: 0;
+		text-align: center;
+	}
+	input#name,
+	input#email,
+	select#reason,
+	select#reason option,
+	input#subject {
+		min-width: $min-wid;
+		width: $wid;
+		max-width: $max-wid;
+		background-color: #fafafa;
+		border-radius: 3px;
+		border: 1px solid #cccccc;
+		padding: 5px;
+		font-size: 1.1em;
+	}
+	select#reason,
+	select#reason option {
+		padding-left: 0;
+		padding-right: 0;
+		min-width: calc(#{$min-wid} + 12px);
+		width: calc(#{$wid} + 12px);
+		max-width: calc(#{$max-wid} + 12px);
+	}
+	select#reason option:first-child {
+		color: gray;
+	}
+	textarea#message {
+		min-width: $min-wid;
+		width: $wid;
+		max-width: $max-wid;
+		height: 100px;
+		background-color: #fafafa;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		border: 1px solid #cccccc;
+		margin-bottom: 10px;
+		padding: 5px;
+		font-size: 1.1em;
+	}
+	input#submit {
+		font-size: 1.1em;
+		border-radius: 3px;
+		border: 1px solid #d8d8d8;
+		padding: 10px 30px;
+		font-weight: bold;
+		text-align: center;
+		color: #000000;
+		background-color: #f4f4f4;
+		background-image: linear-gradient(top, #f4f4f4, #e5e5e5);
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f4f4, endColorstr=#e5e5e5);
+	}
+	input#submit:hover {
+		cursor: pointer;
+		border: 1px solid #c1c1c1;
+		background-color: #dbdbdb;
+		background-image: linear-gradient(top, #dbdbdb, #cccccc);
+		filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#dbdbdb, endColorstr=#cccccc);
+	}
+	display: block;
+	text-align: center;
+}
+
+.has-placeholder {
+	color: gray;
+}
+
+/* Message flashing */
+.flash {
+	background-color: #fbb0b0;
+	padding: 10px;
+	width: 400px;
+}
+
+@media screen and (max-width: 849px) {
+	body {
+		.container {
+			min-height: calc(100vh - 135px - 53px);
+		}
+	}
+}
+@media screen and (min-width: 767px) and (max-width: 849px) {
+	body {
+		.container {
+			min-height: calc(100vh - 135px - 59px);
+		}
+	}
+}

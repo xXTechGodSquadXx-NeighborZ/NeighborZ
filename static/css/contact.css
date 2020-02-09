@@ -1,74 +1,120 @@
+body {
+  height: 100vh;
+}
+
+body .container {
+  min-height: calc(100vh - 95px - 59px);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  font-family: "Montserrat", "SegeoUI-Light", sans-serif;
+}
+
+h6 {
+  text-align: center;
+}
+
+form {
+  display: block;
+  text-align: center;
+}
+
 form label {
-	font-size: 1.2em;
-	font-weight: bold;
-	display: block;
-	padding: 10px 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+  padding: 10px 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
 }
 
 form input#name,
 form input#email,
-form #reason,
-form #reason option,
+form select#reason,
+form select#reason option,
 form input#subject {
-	width: 400px;
-	background-color: #fafafa;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 1px solid #cccccc;
-	padding: 5px;
-	font-size: 1.1em;
+  min-width: 308px;
+  width: 788px;
+  max-width: calc(100vw - 50px - 12px);
+  background-color: #fafafa;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  padding: 5px;
+  font-size: 1.1em;
+}
+
+form select#reason,
+form select#reason option {
+  padding-left: 0;
+  padding-right: 0;
+  min-width: calc(308px + 12px);
+  width: calc(788px + 12px);
+  max-width: calc(calc(100vw - 50px - 12px) + 12px);
+}
+
+form select#reason option:first-child {
+  color: gray;
 }
 
 form textarea#message {
-	width: 500px;
-	height: 100px;
-	background-color: #fafafa;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 1px solid #cccccc;
-	margin-bottom: 10px;
-	padding: 5px;
-	font-size: 1.1em;
+  min-width: 308px;
+  width: 788px;
+  max-width: calc(100vw - 50px - 12px);
+  height: 100px;
+  background-color: #fafafa;
+  border-radius: 3px;
+  border: 1px solid #cccccc;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 1.1em;
 }
 
 form input#submit {
-	display: block;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	border: 1px solid #d8d8d8;
-	padding: 10px;
-	font-weight: bold;
-	text-align: center;
-	color: #000000;
-	background-color: #f4f4f4;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e5e5e5));
-	background-image: -webkit-linear-gradient(top, #f4f4f4, #e5e5e5);
-	background-image: -moz-linear-gradient(top, #f4f4f4, #e5e5e5);
-	background-image: -ms-linear-gradient(top, #f4f4f4, #e5e5e5);
-	background-image: -o-linear-gradient(top, #f4f4f4, #e5e5e5);
-	background-image: linear-gradient(top, #f4f4f4, #e5e5e5);
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f4f4, endColorstr=#e5e5e5);
+  font-size: 1.1em;
+  border-radius: 3px;
+  border: 1px solid #d8d8d8;
+  padding: 10px 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  background-color: #f4f4f4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e5e5e5));
+  background-image: linear-gradient(top, #f4f4f4, #e5e5e5);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#f4f4f4, endColorstr=#e5e5e5);
 }
 
 form input#submit:hover {
-	cursor: pointer;
-	border: 1px solid #c1c1c1;
-	background-color: #dbdbdb;
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dbdbdb), color-stop(100%, #cccccc));
-	background-image: -webkit-linear-gradient(top, #dbdbdb, #cccccc);
-	background-image: -moz-linear-gradient(top, #dbdbdb, #cccccc);
-	background-image: -ms-linear-gradient(top, #dbdbdb, #cccccc);
-	background-image: -o-linear-gradient(top, #dbdbdb, #cccccc);
-	background-image: linear-gradient(top, #dbdbdb, #cccccc);
-	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#dbdbdb, endColorstr=#cccccc);
+  cursor: pointer;
+  border: 1px solid #c1c1c1;
+  background-color: #dbdbdb;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dbdbdb), to(#cccccc));
+  background-image: linear-gradient(top, #dbdbdb, #cccccc);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#dbdbdb, endColorstr=#cccccc);
+}
+
+.has-placeholder {
+  color: gray;
 }
 
 /* Message flashing */
 .flash {
-	background-color: #fbb0b0;
-	padding: 10px;
-	width: 400px;
+  background-color: #fbb0b0;
+  padding: 10px;
+  width: 400px;
 }
+
+@media screen and (max-width: 849px) {
+  body .container {
+    min-height: calc(100vh - 135px - 53px);
+  }
+}
+
+@media screen and (min-width: 767px) and (max-width: 849px) {
+  body .container {
+    min-height: calc(100vh - 135px - 59px);
+  }
+}
+/*# sourceMappingURL=contact.css.map */

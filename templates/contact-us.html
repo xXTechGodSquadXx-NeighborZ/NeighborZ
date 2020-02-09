@@ -6,40 +6,38 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 		<link rel="stylesheet" href="../static/css/style.css" />
 		<link rel="stylesheet" href="../static/css/contact.css" />
-		<!--{%- include '/partials/font-awesome.html' -%}-->
+		<script src="../static/js/contact.js"></script>
+		{%- include '/partials/font-awesome.html' -%} {%- include '/partials/favicons.html' -%}
 		<title>Contacts | NeighborZ</title>
 	</head>
 	<body>
-		{% block content %}
+		{%- include '/partials/nav-bar.html' -%}
 
-		<h2>Contact</h2>
-		{% for message in form.name.errors %}
-		<div class="flash">{{ message }}</div>
-		{% endfor %} {% for message in form.email.errors %}
-		<div class="flash">{{ message }}</div>
-		{% endfor %} {% for message in form.subject.errors %}
-		<div class="flash">{{ message }}</div>
-		{% endfor %} {% for message in form.reason.errors %}
-		<div class="flash">{{ message }}</div>
-		{% endfor %} {% for message in form.message.errors %}
-		<div class="flash">{{ message }}</div>
-		{% endfor %}
-		<form action="{{ url_for('contact_us') }}" method="post">
-			{{ form.hidden_tag() }} {{ form.name.label }} {{ form.name }} {{ form.email.label }} {{ form.email }} {{ form.subject.label }} {{ form.subject }} {{ form.reason.label }} {{ form.reason }} {{ form.message.label }} {{ form.message }} {{ form.submit }}
-		</form>
-		{% endblock %}
-		<!--{%- include '/partials/nav-bar.html' -%} -->
-
-		<!-- <h1>Need assistance?</h1>
-		<h2>Username</h2>
-		<input type="text" placeholder="Enter Username" name="uname" required />
-		<h2>email</h2>
-		<input type="text" placeholder="Enter Email" name="ail" required />
-		<h2>Problem?</h2>
-		<input type="text" placeholder="Enter Problem" name="contactProb" required />
-		<h2>Comments?</h2>
-		<textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Place your in here..."></textarea>
-
-		<button type="submit">Submit</button> -->
+		<div class="container">
+			{% block content %}
+			<br />
+			<h1>Contact Us</h1>
+			{% for message in form.name.errors %}
+			<div class="flash">{{ message }}</div>
+			{% endfor %} {% for message in form.email.errors %}
+			<div class="flash">{{ message }}</div>
+			{% endfor %} {% for message in form.subject.errors %}
+			<div class="flash">{{ message }}</div>
+			{% endfor %} {% for message in form.reason.errors %}
+			<div class="flash">{{ message }}</div>
+			{% endfor %} {% for message in form.message.errors %}
+			<div class="flash">{{ message }}</div>
+			{% endfor %}
+			<form action="{{ url_for('contact_us') }}" method="post">
+				{{ form.hidden_tag() }} {{ form.name.label }} {{ form.name(placeholder="Your Name") }} {{ form.email.label }} {{ form.email(placeholder="Your Email") }} {{ form.subject.label }} {{ form.subject(placeholder="Message Subject") }} {{ form.reason.label }} {{ form.reason }} {{ form.message.label }} {{ form.message(placeholder="Enter Message Here") }} <br />
+				{{ form.submit }}
+			</form>
+			<br />
+			<h6>By submitting this form, you agree not to spam, not to impersonate, and consent to being emailed back</h6>
+			<br />
+			<br />
+			{% endblock %}
+		</div>
+		{%- include '/partials/footer.html' -%}
 	</body>
 </html>

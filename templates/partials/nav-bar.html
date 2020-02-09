@@ -101,10 +101,12 @@
 			display: block;
 		}
 		.mobile .nav-links {
+			z-index: 100000;
 			font-family: "Montserrat", sans-serif;
 			display: flex;
 			justify-content: space-around;
 			font-size: 24px;
+			min-width: 300px;
 			width: calc(50% - 3px);
 			position: absolute;
 			right: 0px;
@@ -159,10 +161,10 @@
 <nav>
 	<div class="normal">
 		<ul>
-			<li><a href="../          ">Home</a></li>
-			<li><a href="../forum     ">Go to Forum</a></li>
-			<li><a href="../about     ">About Us</a></li>
-			<li><a href="../contact-us">Contact Us</a></li>
+			<li><a href="{{ url_for('home') }}">Home</a></li>
+			<li><a href="{{ url_for('forum') }}">Go to Forum</a></li>
+			<li><a href="{{ url_for('about') }}">About Us</a></li>
+			<li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
 		</ul>
 	</div>
 	<div class="mobile">
@@ -173,10 +175,10 @@
 		</div>
 
 		<ul class="nav-links">
-			<li><a href="../          ">Home</a></li>
-			<li><a href="../forum     ">Go to Forum</a></li>
-			<li><a href="../about     ">About Us</a></li>
-			<li><a href="../contact-us">Contact Us</a></li>
+			<li><a href="{{ url_for('home') }}">Home</a></li>
+			<li><a href="{{ url_for('forum') }}">Go to Forum</a></li>
+			<li><a href="{{ url_for('about') }}">About Us</a></li>
+			<li><a href="{{ url_for('contact_us') }}">Contact Us</a></li>
 		</ul>
 		<div class="burger-div">
 			<a class="hamburger hamburger--emphatic burger">
