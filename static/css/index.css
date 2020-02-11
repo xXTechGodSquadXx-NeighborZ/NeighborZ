@@ -1,7 +1,7 @@
 .main {
   min-height: calc(100vh - 95px - 59px);
   display: block;
-  background-image: url("../imgs/main-page-background.png");
+  background-image: url("../imgs/main-page-background.jpg");
   background-repeat: no-repeat;
   background-size: contain;
   margin-top: 50px;
@@ -75,7 +75,7 @@
 
 @media screen and (max-width: 766px) {
   .main {
-    min-height: calc(100vh - 135px - 53px);
+    min-height: calc(100vh - 185px - 53px);
     margin: 0;
     text-align: center;
   }
@@ -93,12 +93,12 @@
 
 @media screen and (min-width: 767px) and (max-width: 849px) {
   body {
-    background-image: url("../imgs/main-page-background.png");
+    background-image: url("../imgs/main-page-background.jpg");
     background-repeat: no-repeat;
     background-size: contain;
   }
   body .main {
-    min-height: calc(100vh - 135px - 50px);
+    min-height: calc(100vh - 185px - 50px);
     background: none;
   }
   body nav {
@@ -108,7 +108,7 @@
 
 @media screen and (min-width: 850px) {
   body {
-    background-image: url("../imgs/main-page-background.png");
+    background-image: url("../imgs/main-page-background.jpg");
     background-repeat: no-repeat;
     background-size: contain;
   }

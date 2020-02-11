@@ -1,0 +1,35 @@
+.main {
+	width: 60vw;
+	min-width: 320px;
+	display: block;
+	h1 {
+		text-align: center;
+	}
+	margin: auto;
+	a {
+		font-size: 14pt;
+	}
+	ul {
+		margin-left: 2rem;
+	}
+}
+
+@media screen and (max-width: 766px) {
+	.main {
+		min-height: calc(100vh - 185px - 53px);
+	}
+}
+@media screen and (min-width: 767px) and (max-width: 849px) {
+	body {
+		.main {
+			min-height: calc(100vh - 185px - 59px);
+		}
+	}
+}
+@media screen and (min-width: 850px) {
+	body {
+		.main {
+			min-height: calc(100vh - 95px - 59px);
+		}
+	}
+}

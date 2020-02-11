@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Sitemap | NeighborZ</title>
+		<link rel="stylesheet" href="../static/css/style.css" />
+		<link rel="stylesheet" href="../static/css/sitemap.css" />
+		{%- include '/partials/favicons.html' -%} {%- include '/partials/font-awesome.html' -%}
+	</head>
+	<body>
+		{%- include '/partials/nav-bar.html' -%}
+		<div class="main">
+			<h1>NeighborZ Site Map</h1>
+			<br>
+			<a href="{{ url_for('home') }}">Homepage</a>
+			<ul class="main-ul">
+				<li><a href="{{ url_for("about") }}">About Us</a></li>
+				<li><a href="{{ url_for("contact_us") }}">Contact Us</a></li>
+				<li><a href="{{ url_for("sitemap") }}">Sitemap</a></li>
+				<li>
+					<a href="{{ url_for("forum") }}">Forum</a>
+					<ul class="forum-ul">
+						<li><a href="{{ url_for("forum") }}">General Discussion</a>
+							<ul><li><a href="{{ url_for("forum") }}">Any Threads Posted</a></li></ul>
+						</li>
+						<li><a href="{{ url_for("forum") }}">Support</a>
+							<ul><li><a href="{{ url_for("forum") }}">Any Threads Posted</a></li></ul>
+						</li>
+						<li><a href="{{ url_for("forum") }}">[Your NeighborZhood's Sub-forum]</a>
+							<ul><li><a href="{{ url_for("forum") }}">Any Threads Posted</a></li></ul></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		{%- include '/partials/footer.html' -%}
+	</body>
+</html>

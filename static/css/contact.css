@@ -108,13 +108,13 @@ form input#submit:hover {
 
 @media screen and (max-width: 849px) {
   body .container {
-    min-height: calc(100vh - 135px - 53px);
+    min-height: calc(100vh - 185px - 53px);
   }
 }
 
 @media screen and (min-width: 767px) and (max-width: 849px) {
   body .container {
-    min-height: calc(100vh - 135px - 59px);
+    min-height: calc(100vh - 185px - 59px);
   }
 }
 /*# sourceMappingURL=contact.css.map */

@@ -96,7 +96,7 @@ body {
 }
 
 .container .emmanuel .avatar {
-  background-image: url(../imgs/avatars/emmanuel.png);
+  background-image: url(../imgs/avatars/emmanuel.svg);
 }
 
 .container .samuel .top {
@@ -108,7 +108,7 @@ body {
 }
 
 .container .samuel .avatar {
-  background-image: url(../imgs/avatars/sam.png);
+  background-image: url(../imgs/avatars/sam.svg);
 }
 
 .container .jack .top {
@@ -120,7 +120,7 @@ body {
 }
 
 .container .jack .avatar {
-  background-image: url(../imgs/avatars/jack.png);
+  background-image: url(../imgs/avatars/jack.svg);
 }
 
 .container .caleb .top {
@@ -132,7 +132,7 @@ body {
 }
 
 .container .caleb .avatar {
-  background-image: url(../imgs/avatars/caleb.png);
+  background-image: url(../imgs/avatars/caleb.svg);
 }
 
 .container .chase .top {
@@ -144,7 +144,7 @@ body {
 }
 
 .container .chase .avatar {
-  background-image: url(../imgs/avatars/chase.png);
+  background-image: url(../imgs/avatars/chase.svg);
 }
 
 footer {
