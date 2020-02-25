@@ -6,7 +6,7 @@
 #* this can give anyone access to our gmail account
 #* 
 
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, redirect
 from forms import ContactForm
 from flask_mail import Message, Mail
 
@@ -72,7 +72,7 @@ def contact_us():
 
 @app.route('/forum/', methods=['GET'])
 def forum():
-    return '<meta http-equiv="Refresh" content="0; url=https://neighborz.freeforums.net/" />'
+    return redirect("https://neighborz.freeforums.net/", code=302)
 
 
 @app.route('/sitemap/', methods=['GET'])
