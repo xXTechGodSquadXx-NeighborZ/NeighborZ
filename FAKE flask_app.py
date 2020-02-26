@@ -7,6 +7,9 @@
 #* 
 
 from flask import Flask, render_template, request, flash, redirect
+import requests
+import random
+import json
 from forms import ContactForm
 from flask_mail import Message, Mail
 
@@ -24,6 +27,18 @@ app.config["MAIL_PASSWORD"] = '' #! Gmail password goes here
 
 mail.init_app(app)
 
+@app.errorhandler(404)
+def page_not_found(e):
+    url = 'https://type.fit/api/quotes'
+    quotesDict = requests.get(url).json()
+    
+    quotesList = []
+    for i in range(len(quotesDict)):
+        quotesList.append(quotesDict[i]['text'])
+    quotesList = list(filter(lambda k: 'lost' in k, quotesList))
+    quote = random.choice(quotesList)
+    
+    return render_template('404.html', quote=quote), 404
 
 @app.route('/', methods=['GET'])
 def home():

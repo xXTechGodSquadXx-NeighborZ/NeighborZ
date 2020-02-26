@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>404 Page Not Found | NeighborZ</title>
+	<link rel="stylesheet" href="static/css/style.css" />
+	{%- include '/partials/favicons.html' -%}
+	<style>
+		* {
+			text-align: center;
+		}
+		blockquote {
+			box-sizing: border-box;
+			width: 80vw;
+			background: lightgray;
+			border: 3px solid black;
+			padding: 2em;
+			border-radius: 5em;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<h1>Error 404: Page Not Found</h1>
+	<p>The link you attempted to access does not exist</p>
+	<p>Click <a href="{{ url_for("home") }}">here</a> to go back to the home page</p>
+	<br>
+	<br>
+	{% if quote %}
+	<blockquote>
+		<h1>Random Quote about being Lost</h1>
+		<br>
+		<p>{{ quote }}</p>
+		<br>
+	</blockquote>
+	{% endif %}
+</body>
+</html>
